@@ -1300,7 +1300,7 @@ int cil_from_netdev(struct __ctx_buff *ctx)
 	 */
 	do_decrypt(ctx, proto);
 	if (ctx->mark & MARK_MAGIC_DECRYPT)
-		return CTX_ACT_OK;
+		return CTX_ACT_DROP;
 #endif
 
 	return do_netdev(ctx, proto, UNKNOWN_ID, obs_point, false);
